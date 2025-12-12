@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>별의 열차</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>별의 열차</title>
 
-<style>
-body {
-    margin: 0;
-    background: #000;
-}
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+    }
 
-.section {
-    position: relative;
-    width: 100%;
-}
+    .section {
+      position: relative;
+      width: 100%;
+    }
 
-.section img {
-    width: 100%;
-    display: block;
-}
+    .section > img {
+      width: 100%;
+      display: block;
+    }
 
-/* GIF / 영상 공통 */
-.overlay {
-    position: absolute;
-    object-fit: cover;
-}
-</style>
+    /* 위에 덮어씌울 GIF/영상 */
+    .overlay {
+      position: absolute;
+      z-index: 2;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- ✅ 프로젝트 A: 배경 PNG + 그 위에 GIF -->
+  <div class="section">
+    <img src="images/별의열차_게임소개.png" alt="Project A" />
 
-<!-- 프로젝트 A -->
-<div class="section">
-    <img src="images/별의열차_게임소개.png">
+    <img
+      src="videos/GameIntroGif.gif"
+      class="overlay"
+      alt="Intro GIF"
+      style="top: 18%; left: 12%; width: 76%;"
+    />
+  </div>
 
-    <!-- A의 움짤 -->
-    <img src="videos/GameIntroGif.gif"
-         class="overlay"
-         style="
-           top: 18%;
-           left: 12%;
-           width: 76%;
-         ">
-</div>
+  <!-- ✅ 프로젝트 B: 투명 프레임 PNG + 그 위(구멍)에 영상 -->
+  <div class="section">
+    <img src="images/별의열차_게임소개2.png(투명).png" alt="Project B Frame" />
 
-<!-- 프로젝트 B -->
-<div class="section">
-    <img src="images/별의열차_게임소개2.png(투명).png">
-
-    <video src="videos/GamePlayVideo.mp4"
-           class="overlay"
-           autoplay loop muted playsinline
-           style="
-             top: 17%;
-             left: 14%;
-             width: 72%;
-           ">
-    </video>
-</div>
-
+    <video
+      src="videos/GamePlayVideo.mp4"
+      class="overlay"
+      autoplay
+      loop
+      muted
+      playsinline
+      style="top: 17%; left: 14%; width: 72%; height: auto;"
+    ></video>
+  </div>
 </body>
 </html>
